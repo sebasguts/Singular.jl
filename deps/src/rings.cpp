@@ -257,4 +257,7 @@ void singular_define_rings(jlcxx::Module & Singular)
         poly p_cp = p_Copy(p, r);
         return p_Diff(p_cp, i, r);
     });
+
+    Singular.method("freeAlgebra", [](ring r, int d){ return freeAlgebra(r,d);});
+    Singular.method("shift_p_Mult_mm", [](poly p, poly m, ring R){ return shift_p_Mult_mm(p,m,R); });
 }
